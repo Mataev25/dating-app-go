@@ -109,4 +109,11 @@ go run cmd/server/main.go
 
 # 4. Тестирование
 curl http://localhost:8080/health
+
+# Сделайте скрипт исполняемым 
+chmod +x test_api.sh
+
+# Запустите тесты
+./test_api.sh
+
 ```
