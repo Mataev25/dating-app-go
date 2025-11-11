@@ -48,7 +48,7 @@ type Repository interface {
     GetUserByID(ctx.Context, id string) (*User, error)
 }
 ```
-userRepository реализует Repository интерфейс
+`userRepository` реализует `Repository` интерфейс
 ```go
 type userRepository struct {
     db *sqlx.DB
@@ -60,8 +60,8 @@ type userRepository struct {
 `GetUserByEmail()` - поиск по email (для проверки дубликатов)
 `GetUserByID()` - поиск по UUID
 
-Сервис (`internal/user/service.go`)
-Service содержит логику приложения
+### Сервис (`internal/user/service.go`)
+`Service` содержит логику приложения
 ```go
 func (s *userService) Register(
     ctx context.Context,
@@ -80,8 +80,8 @@ Email должен быть уникальным
 Имя: 2-50 символов
 Описание: до 500 символов
 
-HTTP Handlers (`internal/user/handler.go`)
-Handler обрабатывает HTTP запросы
+### HTTP Handlers (`internal/user/handler.go`)
+`Handler` обрабатывает `HTTP` запросы
 ```go
     func (h *Handler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
     // Роутинг на основе пути и метода
@@ -89,7 +89,7 @@ Handler обрабатывает HTTP запросы
     // GET  /api/v1/users/{id}     -> GetUser()
 }
 ```
-Индексы БД:
+### Индексы БД:
 
 `idx_users_email` - для быстрого поиска по email
 `idx_users_age_gender` - для будущего поиска по критериям
