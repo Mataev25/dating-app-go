@@ -105,7 +105,7 @@ cd dating-app
 go mod tidy
 
 # 3. Запуск
-go run cmd/server/main.go
+go run main.go
 
 # 4. Тестирование
 curl http://localhost:8080/health
